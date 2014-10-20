@@ -50,9 +50,9 @@ object Main extends App with LazyLogging {
 				while (true) {
 					try {
 						val (size, elapsed) = testDiskSynced
-						logger.debug(s"contention write of $size bytes")
+						//logger.debug(s"contention write of $size bytes")
 					} catch {
-						case e: Exception => logger.debug("failed background io", e)
+						case e: Exception => //logger.debug("failed background io", e)
 					}
 				}
 			}
@@ -68,10 +68,10 @@ object Main extends App with LazyLogging {
 						val read = channel.read(buffer)
 						buffer.rewind
 						channel.close
-						logger.debug(s"contention read of $read bytes from $file")
+						//logger.debug(s"contention read of $read bytes from $file")
 
 					} catch {
-						case e: Exception => logger.debug("failed background io")
+						case e: Exception => //logger.debug("failed background io")
 					}
 				}
 			}
